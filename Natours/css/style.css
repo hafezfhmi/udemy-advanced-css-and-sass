@@ -1,79 +1,3 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
-
-/* 
-1. We want the font size to be 10px. So by default, user will have 16px and if we do the math, 16 * 62.5% = 10px.
-The reason we set the root font size with percentage is because, if the user modified their font size, let's say 20px, 
-the root font size won't deviate much from 10px (20 * 62.5 = 12.5px). 
-We don't want to overwrite the user's font size for their accessibility.
-*/
-html {
-  font-size: 62.5%;
-  /* 1 */ }
-
-body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.802), rgba(40, 180, 133, 0.802)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  /* top-left, top-right, bottom-right, bottom-left */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* shift 50% to the left and up (based on the current element) */
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /*
-  fix the shakiness of Y-axis at the end of the animation (optional)
-  backface-visibility hides the 'backside' of an element
-  */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /* 
-    animation-delay: 3s; 
-    animation-iteration-count: 3;
-    */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out; }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -102,11 +26,68 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+/* 
+1. We want the font size to be 10px. So by default, user will have 16px and if we do the math, 16 * 62.5% = 10px.
+The reason we set the root font size with percentage is because, if the user modified their font size, let's say 20px, 
+the root font size won't deviate much from 10px (20 * 62.5 = 12.5px). 
+We don't want to overwrite the user's font size for their accessibility.
+*/
+html {
+  font-size: 62.5%;
+  /* 1 */ }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /*
+    fix the shakiness of Y-axis at the end of the animation (optional)
+    backface-visibility hides the 'backside' of an element
+    */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* 
+      animation-delay: 3s; 
+      animation-iteration-count: 3;
+      */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
+
 .btn {
+  /* pseudo class for unvisited link and visited link */
   /* 
-    1. need to specify content property for ::after
-    2. height and width based on the & element 
-    */ }
+      1. need to specify content property for ::after
+      2. height and width based on the & element 
+      */ }
   .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
@@ -148,4 +129,24 @@ body {
     /* the element will retain the first keyframe styling before starting (delayed) */
     animation-fill-mode: backwards; }
 
-/* pseudo class for unvisited link and visited link */
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.802), rgba(40, 180, 133, 0.802)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  /* top-left, top-right, bottom-right, bottom-left */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* shift 50% to the left and up (based on the current element) */
+    transform: translate(-50%, -50%);
+    text-align: center; }

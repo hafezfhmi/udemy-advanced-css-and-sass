@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* 
+1. We want the font size to be 10px. So by default, user will have 16px and if we do the math, 16 * 62.5% = 10px.
+The reason we set the root font size with percentage is because, if the user modified their font size, let's say 20px, 
+the root font size won't deviate much from 10px (20 * 62.5 = 12.5px). 
+We don't want to overwrite the user's font size for their accessibility.
+*/
+html {
+  font-size: 62.5%; /* 1 */
+}
+
+body {
+  box-sizing: border-box;
+}
