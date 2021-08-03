@@ -1,0 +1,52 @@
+// 1.Give the .card perspective for the animation
+// 2. The height should be the same as the child element because of position relative
+// 3. backface-visibility hidden to hide each side back
+// 4. the back should initially have 180 deg rotateY so when it rotates, it will rotate back to 0 deg
+// 5. linear gradient background should be implemented with background-image property
+// 6. when card is on hover, change the properties in __side--front and back to rotate
+
+.card {
+  perspective: 150rem; // 1
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; // 2
+
+  &__side {
+    color: #fff;
+    font-size: 2rem;
+
+    height: 50rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden; // 3
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg); // 4
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ); //5
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+}
