@@ -36,6 +36,15 @@
     }
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
   /* 
       1. need to specify content property for ::after
       2. height and width based on the & element 
