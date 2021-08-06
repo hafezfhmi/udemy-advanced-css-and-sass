@@ -14,6 +14,24 @@ We don't want to overwrite the user's font size for their accessibility.
 */
 html {
   font-size: 62.5%; /* 1 */
+
+  // Method 1 for breakpoint (single)
+  // @include respond-phone {
+  //   font-size: 50%;
+  // }
+
+  // Method 2 for breakpoint (multiple)
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem - 12px
+  }
 }
 
 body {
