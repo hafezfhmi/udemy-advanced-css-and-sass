@@ -27,6 +27,10 @@
   &__left {
     width: 33.333333%;
     display: table-cell;
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 
   &__right {
@@ -60,6 +64,11 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; // 3
+
+    @include respond(phone) {
+      -moz-column-count: 1;
+      column-count: 1;
+    }
   }
 
   // target active html anchor
