@@ -10,6 +10,13 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  // if browser supports the condition, apply the styling
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
   &__content {
     @include absCenter;
 
