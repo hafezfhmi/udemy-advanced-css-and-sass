@@ -453,7 +453,23 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo" />
+        <!--  Image using picture tag and source to display the image.
+              If source fail to meet the media query, the fallback img will display
+        -->
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 600px)"
+          />
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+            class="footer__logo"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
